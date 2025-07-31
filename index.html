@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ffafbd, #ffc3a0);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 40px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 20px auto;
+      max-width: 700px;
+      line-height: 1.6;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Image Slider */
+    .slider {
+      position: relative;
+      max-width: 90%;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .slides {
+      display: flex;
+      width: 400%;
+      animation: slide 240s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      flex: 1;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      25% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      75% { transform: translateX(-300%); }
+      100% { transform: translateX(0%); }
+    }
+
+    /* Hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(-45deg);
+      animation: float 5s infinite ease-in;
+    }
+    .heart:before, .heart:after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+    .heart:before { top: -10px; left: 0; }
+    .heart:after { left: 10px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+      100% { transform: translateY(-600px) rotate(-45deg); opacity: 0; }
+    }
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      opacity: 0.8;
+      animation: confettiFall 5s linear infinite;
+    }
+
+    @keyframes confettiFall {
+      0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(600px) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday, My Love ❤</h1>
+  <p>
+    Today I celebrate you — the love of my life, my best friend, and my everything.  
+    May this year bring you endless joy and love, just as you bring to me every single day.
+  </p>
+
+  <!-- Image Slider -->
+  <div class="slider">
+    <div class="slides">
+      <img src="/Atif/image/DSC_0530.JPG" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250615-WA0025.jpg" alt="Memory 2">
+      <img src="/Atif/image/IMG-20250615-WA0026.jpg" alt="Memory 3">
+      <img src="/Atif/image/IMG-20250615-WA0033.jpg" alt="Memory 4">
+      <img src="/Atif/image/IMG-20250615-WA0041.jpg" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250615-WA0042.jpg" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250730-WA0004.jpg" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250730-WA0005.jpg" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250730-WA0006.jpg" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250730-WA0007.jpg" alt="Memory 10">
+      <img src="/Atif/image/IMG-20250730-WA0008.jpg" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250730-WA0009.jpg" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250730-WA0010.jpg" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250730-WA0011.jpg" alt="Memory 1">
+      <img src="/Atif/image/IMG-20250730-WA0012.jpg" alt="Memory 1">
+      <img src="/Atif/image/WhatsApp Image 2025-07-30 at 21.03.28_9bc006ea.jpg" alt="Memory 1">
+      <img src="/Atif/image/WhatsApp Image 2025-07-30 at 21.03.29_21c4a992.jpg" alt="Memory 1">
+      <img src="/Atif/image/WhatsApp Image 2025-07-30 at 21.03.29_97b097af.jpg" alt="Memory 1">
+    </div>
+  </div>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="/Atif/image/videoplayback.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <footer>From Gunnu and Mummy</footer>
+
+  <script>
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 400);
+
+    // Confetti
+    function createConfetti() {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * window.innerWidth + 'px';
+      confetti.style.backgroundColor = hsl(${Math.random()*360}, 100%, 70%);
+      confetti.style.animationDuration = (3 + Math.random() * 2) + 's';
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 5000);
+    }
+    setInterval(createConfetti, 250);
+  </script>
+</body>
+</html>
